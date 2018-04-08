@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Domy</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+
+    <style type="text/css">
+        body{
+            margin-top: 40px;
+            margin-right: 70px;
+            margin-bottom: 100px;
+            margin-left: 70px; }
+    </style>
+</head>
+
+<body>
+<div style="margin: auto; max-width: 1000px">
+
+
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">Własne mieszkanie? Z nami to możliwe !</h1>
+        <p class="lead">Poniżej znajdziesz dane dewelopera i dostępne inwestycje</p>
+    </div>
+</div>
+
+<form action="/adddeveloper" method="post" th:object="${newDeveloper}">
+    <div class="form-group">
+        <label for="name">Nazwa</label>
+        <input th:field="*{name}" type="text" class="form-control" id="name" placeholder="Wpisz nazwę"/>
+    </div>
+
+    <div class="form-group">
+        <label for="description">Opis</label>
+        <input th:field="*{description}" type="text" class="form-control" id="description" placeholder="Wpisz tytuł"/>
+    </div>
+
+    <div class="form-group">
+        <label for="logoURL">Logo</label>
+        <input th:field="*{logoURL}" type="text" class="form-control" id="logoURL" placeholder="Wpisz tytuł"/>
+    </div>
+
+    <form action="/adddeveloper" method="post" th:object="${newDetails}">
+        <div class="form-group">
+        <label for="address">Adres</label>
+        <input th:field="*{address}" type="text" class="form-control" id="address" placeholder="Wpisz tytuł"/>
+        </div>
+
+        <div class="form-group">
+        <label for="NIP">NIP</label>
+        <input th:field="*{NIP}" type="text" class="form-control" id="NIP" placeholder="Wpisz tytuł"/>
+        </div>
+        <div class="form-group">
+        <label for="REGON">REGON</label>
+        <input th:field="*{REGON}" type="text" class="form-control" id="REGON" placeholder="Wpisz tytuł"/>
+        </div>
+
+    </form>
+    <button type="submit" class="btn btn-primary">Dodaj dewelopera</button>
+</form>
+
+
+<!--<form action="/adddeveloper" method="post" th:object="${newDetails}">-->
+    <!--<div class="form-group">-->
+        <!--<label for="address">Adres</label>-->
+        <!--<input th:field="*{address}" type="text" class="form-control" id="address" placeholder="Wpisz tytuł"/>-->
+    <!--</div>-->
+
+    <!--<div class="form-group">-->
+        <!--<label for="NIP">NIP</label>-->
+        <!--<input th:field="*{NIP}" type="text" class="form-control" id="NIP" placeholder="Wpisz tytuł"/>-->
+    <!--</div>-->
+    <!--<div class="form-group">-->
+        <!--<label for="REGON">REGON</label>-->
+        <!--<input th:field="*{REGON}" type="text" class="form-control" id="REGON" placeholder="Wpisz tytuł"/>-->
+    <!--</div>-->
+    <!--<button type="submit" class="btn btn-primary">Dodaj dewelopera</button>-->
+<!--</form>-->
+
+</body>
+</html>
